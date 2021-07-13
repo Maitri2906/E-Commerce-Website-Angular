@@ -14,14 +14,14 @@ import { TotalOrderComponent } from './Admin/TotalOrder/total-order/total-order.
 import { SettingsComponent } from './Admin/Settings/settings/settings.component';
 
 import { AuthGuard } from './_helpers/auth.guard';
+import { UserHomeComponent } from './User/user-home/user-home.component';
 const routes: Routes = [
-  {path: '',redirectTo:'Home', pathMatch:'full'},
-  {path:'Home',component:HomeComponent},
-  { path: '', component: HomeComponent, canActivate: [AuthGuard] },
   {path: '',redirectTo:'login', pathMatch:'full'},
+
+  
   
   {path:'Home',component:DashboardComponent, canActivate: [AuthGuardGuard]},
-
+{path:'UserHome', component:UserHomeComponent, canActivate:[AuthGuard]},
   {path:'Products',component:ProductsComponent},
   {path:'Settings',component:SettingsComponent},
   {path:'OrderList',component:OrderListComponent}, 
